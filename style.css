@@ -1,0 +1,375 @@
+.logo {
+    display: inline-block;
+    position: absolute;
+    width: 2.15%;
+    height: 4.68%;
+    top: 3.9%;
+    left: 5.83%;
+}
+
+.entrada {
+
+    display: inline-block;
+    position: absolute;
+    width: 40%;
+    height: 4.68%;
+    top: 16.667%;
+    left: 16.4%;
+}
+
+
+
+.texto {
+    display: inline-block;
+    position: absolute;
+    width: 99%;
+    height: 99%;
+    color: #0A3871;
+    font-size: 80%;
+    border: none;
+
+}
+
+.texto:hover {
+    border: solid;
+    border-color: aqua;
+    border-width: 1px;
+}
+
+
+
+
+.salida {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    display: inline-block;
+    position: absolute;
+    width: 27.77%;
+    height: 92.18%;
+    border-top-left-radius: 10% 6%;
+    border-top-right-radius: 10% 6%;
+    border-bottom-left-radius: 10% 6%;
+    border-bottom-right-radius: 10% 6%;
+
+    display: inline-block;
+    position: absolute;
+
+    bottom: 3.91%;
+    right: 3.91%;
+}
+
+.salida:hover {
+    border: solid;
+    border-color: aqua;
+    border-width: 0.001%;
+
+}
+
+.texto-perdido {
+    width: 84%;
+    height: 32%.2;
+
+
+    display: inline-block;
+    position: absolute;
+    bottom: 42.055%;
+    left: 8%;
+}
+
+.faltante {
+    width: 84%;
+    height: 6.144%;
+    display: inline-block;
+    position: absolute;
+
+    right: 8%;
+    top: 61.33%;
+    font-family: inter;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 120%;
+    text-align: center;
+    vertical-align: top;
+    color: #343A40;
+
+}
+
+.instrucciones {
+    display: inline-block;
+    position: absolute;
+
+    vertical-align: middle;
+    right: 8%;
+    top: 73.41%;
+    width: 84%;
+    height: 5.084%;
+    font-family: inter;
+
+    font-size: 1.3rem;
+
+
+    text-align: center;
+    vertical-align: top;
+    color: #495057;
+
+}
+
+.mensaje-salida {
+    color: #0A3871;
+    overflow: auto;
+    padding: 5%;
+    margin: auto 5%;
+    width: 80%;
+    height: 80%;   
+    display: inline-block;
+    display: none;
+    text-align: center;
+
+}
+
+
+
+.copiar {
+    position: absolute;
+    left: 8%;
+    bottom: 3.38%;
+    display: inline-block;
+    display: none;
+    width: 328px;
+    width: 84%;
+    height: 7.09%;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0A3871;
+    background: #FFFFFF;
+    border: solid;
+    border-width: 1px;
+    border-color: #0A3871;
+    border-radius: 24px;
+    transition: 1s all;
+    cursor: pointer;
+}
+
+
+.copiar:hover {
+
+    transform: scale(1.1);
+}
+
+
+.vector {
+    display: inline-block;
+    position: absolute;
+    left: 16.66%;
+    top: 83.2%;
+
+
+}
+
+.indicacion {
+    display: inline-block;
+    position: absolute;
+    left: 18.33%;
+    top: 83.2%;
+    font-size: 12px;
+    color: #495057;
+}
+
+
+.boton-encriptar {
+    position: absolute;
+
+
+    left: 16.66%;
+    bottom: 7.03125%;
+    display: inline-block;
+    width: 22.77%;
+    height: 6.54%;
+    font-size: 80%;
+    font-weight: bold;
+    color: white;
+    background-color: #0A3871;
+    border: none;
+    border-radius: 24px;
+    transition: 1s all;
+    cursor: pointer;
+}
+
+.boton-encriptar:hover {
+
+
+    transform: scale(1.1);
+}
+
+
+.boton-desencriptar {
+
+    display: inline-block;
+    position: absolute;
+    left: 41.11%;
+    top: 86.42%;
+    width: 22.77%;
+    height: 6.54%;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #0A3871;
+    background-color: #D8DFE8;
+    border: none;
+    border-radius: 24px;
+    transition: 1s all;
+    cursor: pointer;
+}
+
+.boton-desencriptar:hover {
+
+    transform: scale(1.1);
+}
+
+@media screen and (max-width:375px) {
+
+    .logo{
+        width: 6%;
+    }
+    .entrada{
+        display: inline-block;
+        width: 92% ;
+        position: absolute;
+        left: 4%;
+        top: 20%;
+
+    }
+    .indicacion{
+        left: 10%;
+        top: 50%;
+
+    }
+    .vector{
+        left: 4%;
+        top: 50%;
+    }
+
+    .texto-perdido{
+        display: none;
+    }
+
+    .boton-encriptar{
+        top: 55%;
+        left: 4%;
+        width: 92%;
+    }
+    .boton-desencriptar{
+        top: 65%;
+        left: 4%;
+        width: 92%;
+    }
+
+    .salida{
+        width: 92%;
+        height: 50%;
+        left: 4%;
+        top: 75%;
+        border-radius: 3em;
+        border-width: 0.0125rem;
+    }
+
+    .faltante{
+        top: 1%;
+    }
+    .instrucciones{
+        top: 30%;
+    }
+
+    .mensaje-salida{
+        position: relative;
+        width: 50%;
+        height: 50%;
+        padding: 1%;
+        top: -15%;
+        
+    }
+
+    .copiar{
+        top: 80%;
+        height: 10%;
+    }
+
+}
+
+
+
+
+@media screen and (max-width:768px) {
+
+
+    .logo{
+        width: 6%;
+    }
+    .entrada{
+        display: inline-block;
+        width: 92% ;
+        position: absolute;
+        left: 4%;
+        top: 20%;
+
+    }
+    .indicacion{
+        left: 10%;
+        top: 50%;
+
+    }
+    .vector{
+        left: 4%;
+        top: 50%;
+    }
+
+    .texto-perdido{
+        display: none;
+    }
+
+    .boton-encriptar{
+        top: 55%;
+        left: 4%;
+        width: 92%;
+    }
+    .boton-desencriptar{
+        top: 65%;
+        left: 4%;
+        width: 92%;
+    }
+
+    .salida{
+        width: 92%;
+        height: 50%;
+        left: 4%;
+        top: 75%;
+        border-radius: 3em;
+        border-width: 0.0125rem;
+    }
+
+    .faltante{
+        top: 1%;
+    }
+    .instrucciones{
+        top: 30%;
+    }
+
+    .mensaje-salida{
+        position: relative;
+        width: 50%;
+        height: 50%;
+        padding: 1%;
+        top: -15%;
+        
+    }
+
+    .copiar{
+        top: 80%;
+        height: 10%;
+    }
+
+
+
+
+
+
+}
