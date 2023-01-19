@@ -58,9 +58,15 @@
 
     <footer>
 
+        <p>Den julvsquez@gmail.com 2022-2023</p>
 
     </footer>
+
+
+
 </body>
+
+   
 
 
 </html>
@@ -153,14 +159,14 @@
     }
 
 
-    function ocultar(){
+    function ocultar() {
 
         /*Se ocultan los elementos del HTML en el área de salida*/
 
         document.querySelector(".texto-perdido").style.display = "none";
         document.querySelector(".instrucciones").style.display = "none";
         document.querySelector(".faltante").style.display = "none";
-        
+
 
     }
 
@@ -170,18 +176,18 @@
         // Se carga el mensaje de salida por variable cad al innerText de .mensaje-salida
         document.querySelector(".mensaje-salida").innerText = cad;
         document.querySelector(".copiar").style.display = "inline-block";
-        
-        
+
+
     }
-    
-    function copiar(){
+
+    function copiar() {
         /*Función para copiar el contenido de .mensaje-salida*/
         let parrafo = document.querySelector(".mensaje-salida"); //Se carga su contenido a una variable
         let rangoSelect = document.createRange();// Se crea un rango para selección
         rangoSelect.selectNode(parrafo);// Se carga el Parrafo al rango de selección
         window.getSelection().removeAllRanges();// Se limpia cualquier selección
         window.getSelection().addRange(rangoSelect);// Se carga el rango a la selección
-        let resul  = document.execCommand("copy");//Se copia el rango seleccionado al portapapeles 
+        let resul = document.execCommand("copy");//Se copia el rango seleccionado al portapapeles 
         window.getSelection().removeRange(rangoSelect);//Se limpia cualquier selección
 
     }
@@ -195,8 +201,8 @@
     boton1.onclick = encriptar;     //Llamado a la función encriptar
     boton2.onclick = desencriptar;  //Llamado a la función desencriptar
     boton3.onclick = copiar;        //Llamado a la función copiar
-    
-    
+
+
     /*FIN DEL SCRIPT*/
 
 
