@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Encriptador Alura</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+
+<body>
+
+    <header>
+        <img src="imagenes/Logo.png" alt="Logo Alura" class="logo">
+    </header>
+
+
+
+    <main>
+
+        <div>
+
+            <section class="entrada">
+                <input type="text" name="usuario" id="" value="Ingrese el texto aquí" class="texto">
+            </section>
+
+
+            <section class="salida">
+                <img src="imagenes/Muneco.png" alt="texto-perdido" class="texto-perdido">
+                <p class="faltante">Ningún mensaje fue encontrado</p>
+                <p class="instrucciones">Ingresa el texto que deseas encriptar o desencriptar</p>
+                <p class="mensaje-salida"></p>
+                <input type="button" value="Copiar" class="copiar">
+            </section>
+        </div>
+
+
+
+
+
+        <section>
+            <img src="imagenes/Vector.png" alt="advertencia" class="vector">
+            <p class="indicacion">Sólo minúsculas y sin acentos</p>
+            <input type="button" value="Encriptar" class="boton-encriptar">
+            <input type="button" value="Desencriptar" class="boton-desencriptar">
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>Den julvsquez@gmail.com 2022-2023</p>
+
+    </footer>   
+
+
+
+</body>
+
+   
+
+
+</html>
+
+
+
+<script>
+
+    /*Variables*/
+    let mensaje;    //mensaje a procesar
+    let entrada;    //mensaje de entrada
+    let salida;     //mensaje de salida
+    String(salida);
+
+    /***Constantes llaves de encriptación*/
+    const letrae = /enter/ig;
+    const letraa = /ai/ig;
+    const letrai = /imes/ig;
+    const letrao = /ober/ig;
+    const letrau = /ufat/ig;
+    const restricciones = /[A-Z-\u00E0-\u00FC]/;
+
+
+    /*Función para validar cadena a procesar*/
+    function validar(cadena) {
+
+        /*Se valida que el texto recibido no contenga ni espacios ni letras mayúsculas*/
+        if (restricciones.test(cadena)) {
+            alert("El mensaje contiene mayúsculas o acentos");
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    /*Función de encriptado*/
+    function encriptar() {
+        entrada = ""; //vaciar las cadenas
+        salida = "";
+        String(entrada = document.querySelector(".texto").value); //leer el input de texto .texto
+        /*Iteramos entrada buscando las vocales
+        *si se encuentra una vocal se carga su
+        *respectiva llave en salida           
+        */
+        if (validar(entrada)) {
+            for (i = 0; i < entrada.length; i++) {
+
+                if (entrada[i] == 'e') {
+                    salida = salida + "enter";
+                } else if (entrada[i] == 'i') {
+                    salida = salida + "imes";
+                }
+                else if (entrada[i] == 'a') {
+                    salida = salida + "ai";
+                } else if (entrada[i] == 'o') {
+                    salida = salida + "ober";
+                } else if (entrada[i] == 'u') {
+                    salida = salida + "ufat";
+                } else {
+                    salida = salida + entrada[i]; //sino se carga la letra
+                }
+
+                imprimir(salida);
+                //console.log(salida[i]);  // Marcador
+            }
+
+        } else {
+            alert("Corrija el mensaje");
+        }
+
+
+    }
+    /*Función de desencriptado*/
+
+    function desencriptar() {
+        salida = "";
+        entrada = ""; //vaciar las cadenas
+        entrada = String(entrada = document.querySelector(".texto").value); //leer el input de texto .texto
+
+        if (validar(entrada)) {
+
+            /*Se utiliza el método String.replaceAll(regex, vocal) para reemplazar todas las coincidencias de las llaves por sus correspondientes vocales*/
+
+            salida = entrada.replaceAll(letrae, 'e').replaceAll(letraa, 'a').replaceAll(letrai, 'i').replaceAll(letrao, 'o').replaceAll(letrau, 'u');
+            imprimir(salida);
+        } else {
+            alert("Corrija el mensaje");
+        }
+
+    }
+
+
+    function ocultar() {
+
+        /*Se ocultan los elementos del HTML en el área de salida*/
+
+        document.querySelector(".texto-perdido").style.display = "none";
+        document.querySelector(".instrucciones").style.display = "none";
+        document.querySelector(".faltante").style.display = "none";
+
+
+    }
+
+    function imprimir(cad) {
+        ocultar();// Llamada a la funcior ocultar
+        document.querySelector(".mensaje-salida").style.display = "inline-block";
+        // Se carga el mensaje de salida por variable cad al innerText de .mensaje-salida
+        document.querySelector(".mensaje-salida").innerText = cad;
+        document.querySelector(".copiar").style.display = "inline-block";
+
+
+    }
+
+    function copiar() {
+        /*Función para copiar el contenido de .mensaje-salida*/
+        let parrafo = document.querySelector(".mensaje-salida"); //Se carga su contenido a una variable
+        let rangoSelect = document.createRange();// Se crea un rango para selección
+        rangoSelect.selectNode(parrafo);// Se carga el Parrafo al rango de selección
+        window.getSelection().removeAllRanges();// Se limpia cualquier selección
+        window.getSelection().addRange(rangoSelect);// Se carga el rango a la selección
+        let resul = document.execCommand("copy");//Se copia el rango seleccionado al portapapeles 
+        window.getSelection().removeRange(rangoSelect);//Se limpia cualquier selección
+
+    }
+
+
+    /*Se crean los botones a usar*/
+    boton1 = document.querySelector(".boton-encriptar");
+    boton2 = document.querySelector(".boton-desencriptar");
+    boton3 = document.querySelector(".copiar");
+    /*Se define su comportamiento*/
+    boton1.onclick = encriptar;     //Llamado a la función encriptar
+    boton2.onclick = desencriptar;  //Llamado a la función desencriptar
+    boton3.onclick = copiar;        //Llamado a la función copiar
+
+
+    /*FIN DEL SCRIPT*/
+
+
+</script>
